@@ -11,6 +11,14 @@ public class ConjuntoDeEnteros {
     }
 
     public ConjuntoDeEnteros(int[] vector) {
+        int[] vector1 = new int[10];
+        size = 0;
+        for (int i = 0; i < vector.length; i++) {
+            for (int j = 0; j < vector1.length; j++) {
+                if (vector[i])
+                vector1[i]=;
+            }
+        }
     }
 
     public int cardinal() {
@@ -86,5 +94,12 @@ public class ConjuntoDeEnteros {
             }
         }
             return true;
+    }
+    public int[] elementos (){
+        int[] nuevoConj = new int[size];
+        for (int i = 0; i < size; i++) {
+            nuevoConj[i]=vector[i];
+        }
+        return nuevoConj;
     }
 }

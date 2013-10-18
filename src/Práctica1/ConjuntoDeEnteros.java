@@ -11,12 +11,21 @@ public class ConjuntoDeEnteros {
     }
 
     public ConjuntoDeEnteros(int[] vector) {
-        int[] vector1 = new int[10];
-        size = 0;
+        this.vector = new int[10];
+        this.size = 0;
+
         for (int i = 0; i < vector.length; i++) {
-            for (int j = 0; j < vector1.length; j++) {
-                if (vector[i])
-                vector1[i]=;
+            if (size < 10) {
+                boolean encontrado = false;
+                for (int j = 0; j < i; j++) {
+                    if (vector[i] == vector[j]) {
+                        encontrado = true;
+                    }
+                }
+                if (!encontrado) {
+                    this.vector[size] = vector[i];
+                    size++;
+                }
             }
         }
     }

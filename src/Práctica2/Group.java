@@ -17,11 +17,12 @@ public class Group extends Contact {
         return false;
     }
     public boolean add(Contact contact){
+        int[] array = new int[contactVector.length + contactVector.length];
         if (isMember(contact.getId())) return false;
-        if (contactVector[contactVector.length - 1] != null)
-            contactVector[i]=contact;
-            return true;
+        if (contactVector[contactVector.length - 1] != null){
+            System.arraycopy(contactVector,0,array,0,contactVector.length -1);
         }
-        return true;
+        
     }
+
 }

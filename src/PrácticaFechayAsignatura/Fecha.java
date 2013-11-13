@@ -53,10 +53,24 @@ public class Fecha {
         return fechaCorrecta;
     }
 
-    public void añadeDias(int d) throws Exception {
-        calendar.add(Calendar.DAY_OF_MONTH, d);
-        if (d < 0 || d > 30) {
+    public void añadeDias(int dia) throws Exception {
+        calendar.add(Calendar.DAY_OF_MONTH, dia);
+        if (dia < 0 || dia > 30) {
             throw new Exception("Error en el número de días");
         }
     }
+	public int diferencia(Fecha calendar2 ) throws Exception{
+            
+		Calendar diferencia = Calendar.getInstance();
+		long m_fechainicio = calendar.getTime().getTime();
+		long m_fechafin  = calendar2.calendar.getTime().getTime();
+		long m_diferencia = m_fechafin - m_fechainicio;
+		diferencia.setTimeInMillis(m_diferencia);
+		int resultado =diferencia.get(Calendar.DAY_OF_YEAR)-1;
+		if (resultado < 0 || resultado > 30 ){
+			throw new Exception("Error en la diferencia de fechas");
+		}
+		return resultado; 
+	}
+
 }
